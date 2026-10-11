@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Займы и карты онлайн — предложения банков и МФО | Вернисаж</title>
+<meta name="description" content="Вернисаж — подборка займов МФО, кредитных и дебетовых карт банков. Коротко об условиях, оформление онлайн на сайте партнёра.">
+<meta name="theme-color" content="#F2F0F1">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/unbounded-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/unbounded-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/sculpt/hero.webp" as="image" type="image/webp" imagesrcset="img/sculpt/hero-960.webp 960w, img/sculpt/hero-1800.webp 1800w, img/sculpt/hero.webp 2400w" imagesizes="(max-width: 1023px) 124vw, 78vw">
+<link rel="stylesheet" href="css/style.css?v=20261011175554">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Вернисаж — займы и карты онлайн">
+<meta property="og:description" content="Займы МФО, кредитные и дебетовые карты банков. Оформление онлайн на сайте партнёра.">
+<meta property="og:image" content="https://daviddavidso.github.io/vernissage/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="skip" href="#main">Перейти к содержанию</a>
+
+<!-- Значки — тонкие линии 1,5 px, свои. -->
+<svg width="0" height="0" class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M3 12h17M14 6l6 6-6 6"/></symbol>
+  <symbol id="i-out" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M9 6v12M15 6v12"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z"/></symbol>
+</svg>
+
+<header class="hdr" id="hdr">
+  <div class="hdr__in">
+    <a class="brand" href="./"><span data-brand>Вернисаж</span><span class="vh">, на главную</span></a>
+    <nav class="hdr__nav" aria-label="Основное меню">
+      <ul role="list">
+        <li><a href="#cat-mfo">Займы</a></li>
+        <li><a href="#cat-credit">Кредитные</a></li>
+        <li><a href="#cat-debit">Дебетовые</a></li>
+        <li><a href="#how-h">Как это работает</a></li>
+        <li><a href="#faq-h">Вопросы</a></li>
+      </ul>
+    </nav>
+    <a class="hdr__tg" id="hdr-tg" href="#" target="_blank" rel="noopener" hidden></a>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <!-- ═══ Первый экран — композиция постера ═══ -->
+  <section class="hero">
+    <div class="hero__head">
+      <h1 class="h1" id="hero-h"><span class="ln">Займы</span> <span class="ln">и карты</span></h1>
+      <p class="free">
+        <svg class="free__arrow" viewBox="0 0 120 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="halo" d="M0 6h118M110 1l8 5-8 5"/><path d="M0 6h118M110 1l8 5-8 5"/></svg>
+        <span class="free__t"><span class="ln">Бесплатный</span> <span class="ln">подбор</span></span>
+      </p>
+    </div>
+
+    <div class="hero__mid">
+      <!-- Скульптура — украшение. Живой холст (js/hero3d.js) рисуется поверх
+           картинки-кадра; без WebGL, при «уменьшить движение» и на паузе видна картинка. -->
+      <div class="hero__art" id="hero-art" aria-hidden="true">
+        <img class="hero__still" src="img/sculpt/hero.webp" srcset="img/sculpt/hero-960.webp 960w, img/sculpt/hero-1800.webp 1800w, img/sculpt/hero.webp 2400w" sizes="(max-width: 1023px) 124vw, 78vw" alt="" width="2400" height="1655" fetchpriority="high" decoding="async">
+        <canvas class="hero__canvas" id="hero-canvas"></canvas>
+      </div>
+      <div class="hero__col">
+        <p class="it" id="tagline"><span class="ln">51 предложение</span> <span class="ln">банков и МФО</span></p>
+        <p class="lc"><span class="ln">сравнить</span> <span class="ln">и выбрать</span></p>
+        <!-- пауза анимации скульптуры (2.2.2) — на ровном фоне, рядом с ней -->
+        <button class="motion" type="button" id="motion" hidden>
+          <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-pause"/></svg><span class="motion__t">Остановить анимацию</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="hero__foot">
+      <div class="hero__date">
+        <p class="big" aria-hidden="true"><span class="big__1" id="big-range">01–24</span><span class="big__2" id="big-word">МФО</span><span class="big__3" id="big-year">2026</span></p>
+        <p class="vh" id="big-text">В подборке 24 займа от МФО</p>
+        <p class="addr"><span class="ln">Займы и карты онлайн,</span> <span class="ln">(по всей России)</span></p>
+      </div>
+      <svg class="diag" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M100 0 0 100" vector-effect="non-scaling-stroke"/></svg>
+      <div class="hero__aside">
+        <p class="lead"><span data-brand-q>«Вернисаж»</span> — подборка займов, кредитных и дебетовых карт от МФО и банков. Сравните условия, выберите подходящее предложение и оформите заявку на сайте партнёра — онлайн, без визита в офис. Решение по заявке принимает банк или МФО.</p>
+        <div class="hero__cta">
+          <a class="btn" href="#catalog">Смотреть предложения<svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
+          <a class="tlink" href="#cat-mfo">Займы на карту</a>
+        </div>
+      </div>
+    </div>
+
+    <img class="hero__corner" src="img/sculpt/corner.webp" alt="" width="720" height="671" loading="lazy" decoding="async">
+  </section>
+
+  <!-- ═══ О подборке ═══ -->
+  <section class="sec about">
+    <div class="sec__grid">
+      <div class="about__side">
+        <div class="label"><h2 class="label__t" id="about-h">О подборке</h2></div>
+        <img class="about__art" src="img/sculpt/about.webp" alt="" width="640" height="698" loading="lazy" decoding="async">
+      </div>
+      <div class="about__body">
+        <p class="manifesto rv">Займы, кредитные и дебетовые карты — на одной странице. Сравнивайте спокойно, решайте сами.</p>
+        <ul class="stats rv" id="stats" role="list">
+          <li><b>51</b> <span>предложение</span></li>
+          <li><b>39</b> <span>компаний</span></li>
+          <li><b>3</b> <span>раздела</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Каталог ═══ -->
+  <section class="sec catalog" id="catalog" aria-labelledby="catalog-h">
+    <div class="sec__grid">
+      <p class="label" aria-hidden="true"><span class="label__t">02 / Каталог</span></p>
+      <div class="catalog__head">
+        <h2 class="h2 rv" id="catalog-h">Предложения</h2>
+        <p class="sec__lead rv">Коротко о каждом предложении. Точные условия, ставки и решение по заявке — на сайте партнёра.</p>
+        <search class="find">
+          <form id="find-form" action="#catalog">
+            <label class="find__label" for="q">Поиск по банку или названию</label>
+            <span class="find__box">
+              <input type="search" id="q" name="q" autocomplete="off" spellcheck="false" enterkeyhint="search" placeholder="Например, Займер">
+              <button type="button" class="find__clear" id="q-clear" hidden><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-x"/></svg><span class="vh">Очистить поиск</span></button>
+            </span>
+          </form>
+        </search>
+        <div class="filters" role="group" aria-label="Показать раздел" id="filters"></div>
+      </div>
+    </div>
+    <p class="vh" role="status" aria-atomic="true" id="count-status"></p>
+    <div class="offers" id="sections"><p class="state">Загружаем предложения…</p></div>
+    <div class="empty" id="empty" hidden>
+      <p class="empty__t" id="empty-text"></p>
+      <button type="button" class="btn btn--line" id="reset">Сбросить поиск</button>
+    </div>
+  </section>
+
+  <!-- ═══ Как это работает ═══ -->
+  <section class="sec how">
+    <div class="sec__grid">
+      <p class="label" aria-hidden="true"><span class="label__t">03 / Порядок</span></p>
+      <h2 class="h2 rv" id="how-h">Как это работает</h2>
+    </div>
+    <ol class="steps" role="list">
+      <li class="rv"><span class="steps__n" aria-hidden="true">01</span><h3>Выберите раздел</h3><p>Займы на карту, кредитные или дебетовые карты — покажем только нужное.</p></li>
+      <li class="rv"><span class="steps__n" aria-hidden="true">02</span><h3>Сравните условия</h3><p>Главное о каждом предложении — в одной строке: что даёт продукт и как его получить.</p></li>
+      <li class="rv"><span class="steps__n" aria-hidden="true">03</span><h3>Оформите у партнёра</h3><p>Кнопка откроет сайт банка или МФО в новой вкладке. Заявка заполняется там.</p></li>
+      <li class="rv"><span class="steps__n" aria-hidden="true">04</span><h3>Получите решение</h3><p>Решение принимает банк или МФО. Перед отправкой прочитайте условия на их сайте.</p></li>
+    </ol>
+  </section>
+
+  <!-- ═══ Вопросы ═══ -->
+  <section class="sec faq">
+    <div class="sec__grid">
+      <p class="label" aria-hidden="true"><span class="label__t">04 / Ответы</span></p>
+      <div>
+        <h2 class="h2 rv" id="faq-h">Вопросы и ответы</h2>
+        <div class="qa">
+          <details><summary>Сколько стоит пользоваться подборкой?<svg class="ico" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></summary><p>Нисколько. Вы переходите на сайт банка или МФО и оформляете продукт там — на их условиях.</p></details>
+          <details><summary>Кто выдаёт займ или карту?<svg class="ico" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></summary><p>Банк или микрофинансовая компания, чьё предложение вы выбрали. Сайт не выдаёт кредиты и займы и не принимает решение по заявке — он собирает предложения в одном месте.</p></details>
+          <details><summary>Что будет после нажатия на кнопку?<svg class="ico" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></summary><p>В новой вкладке откроется сайт партнёра. Там вы заполняете заявку, а банк или МФО сообщает решение. Перед отправкой прочитайте условия на сайте партнёра полностью.</p></details>
+          <details><summary>Что значит пометка «Реклама»?<svg class="ico" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></summary><p>Ссылки в подборке рекламные. По закону такие ссылки маркируются, а номер erid показывает, что реклама зарегистрирована.</p></details>
+          <details><summary>Как взять займ и не переплатить?<svg class="ico" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></summary><p>Смотрите полную стоимость займа (ПСК) — она указана на сайте МФО. Берите сумму, которую точно вернёте в срок, и не оформляйте несколько займов сразу.</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Последний призыв ═══ -->
+  <section class="sec final">
+    <div class="final__in rv">
+      <h2 class="final__h" id="final-h"><span class="ln">Выберите своё&nbsp;—</span> <span class="ln">оформление онлайн</span></h2>
+      <div class="final__side">
+        <img class="final__art" src="img/sculpt/final.webp" srcset="img/sculpt/final-640.webp 640w, img/sculpt/final.webp 1100w" sizes="(max-width: 1023px) 80vw, 36vw" alt="" width="1100" height="923" loading="lazy" decoding="async">
+        <div class="final__act">
+          <a class="btn" href="#catalog">Смотреть предложения<svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
+          <p>Решение по заявке принимает банк или МФО.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="ftr">
+  <div class="ftr__meta">
+    <a class="brand" href="./"><span data-brand>Вернисаж</span><span class="vh">, на главную</span></a>
+    <nav class="ftr__nav" aria-label="Подвал">
+      <ul role="list">
+        <li><a href="#cat-mfo">Займы МФО</a></li>
+        <li><a href="#cat-credit">Кредитные карты</a></li>
+        <li><a href="#cat-debit">Дебетовые карты</a></li>
+        <li><a href="privacy.html">Политика конфиденциальности</a></li>
+      </ul>
+    </nav>
+    <a class="ftr__tg" id="ftr-tg" href="#" target="_blank" rel="noopener" hidden></a>
+  </div>
+  <div class="ftr__legal">
+    <p>Сайт не является банком или микрофинансовой организацией и не выдаёт кредиты и займы. Информация о продуктах носит справочный характер и не является публичной офертой; актуальные условия, ставки и полная стоимость кредита — на сайтах партнёров.</p>
+    <p>Займы выдают МФО, включённые в реестр Банка России. Ссылки на предложения — реклама; за оформление продукта сайт может получать вознаграждение от партнёра.</p>
+    <p><b>Оценивайте свои финансовые возможности и риски.</b></p>
+  </div>
+  <p class="ftr__copy"><span>© <span id="year">2026</span> <span data-brand-text>Вернисаж</span></span><span>18+</span></p>
+  <div class="ftr__word" id="ftr-word" aria-hidden="true"><span data-brand>Вернисаж</span></div>
+  <img class="ftr__art" src="img/sculpt/foot.webp" alt="" width="880" height="620" loading="lazy" decoding="async">
+</footer>
+
+<script>if(typeof OFFERS==="undefined"){document.write('<script src="data.js?t='+Date.now()+'"><\/script>');}</script>
+<script src="js/app.js?v=20261011175554"></script>
+<script type="module" src="js/hero3d.js?v=20261011175554"></script>
+</body>
+</html>

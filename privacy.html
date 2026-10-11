@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Политика обработки данных — Вернисаж</title>
+<meta name="description" content="Как сайт Вернисаж работает с данными посетителей: файлы cookie, партнёрские ссылки, отказ от ответственности.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#F2F0F1">
+<meta name="color-scheme" content="light">
+<link rel="stylesheet" href="css/style.css?v=20261011175554">
+</head>
+<body>
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="hdr" id="hdr">
+  <div class="hdr__in">
+    <a class="brand" href="./"><span data-brand>Вернисаж</span><span class="vh">, на главную</span></a>
+    <nav class="hdr__nav" aria-label="Основное меню">
+      <ul role="list">
+        <li><a href="./#catalog">Каталог предложений</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1" class="doc">
+  <div class="sec__grid">
+    <p class="label" aria-hidden="true"><span class="label__t">Документ</span></p>
+    <div class="doc__in">
+      <h1 class="h2">Политика обработки данных</h1>
+      <p class="doc__lead">Коротко и без юридического тумана: что сайт делает с данными
+         посетителя и за что отвечает, а за что — нет.</p>
+
+      <h2>Кто владелец сайта</h2>
+      <p>Сайт <span data-brand-q>«Вернисаж»</span> — информационная витрина финансовых продуктов.
+         Мы показываем предложения банков и микрофинансовых организаций и ведём
+         посетителя на официальные сайты этих компаний.</p>
+
+      <h2>Какие данные мы собираем</h2>
+      <p>Сайт не содержит форм регистрации и заявок: мы не спрашиваем имя, телефон,
+         паспортные данные и реквизиты карт и не храним их. Хостинг ведёт обычные
+         технические журналы посещений (IP-адрес, тип браузера, время запроса) —
+         они нужны для работы и защиты сайта.</p>
+
+      <h2>Файлы cookie и статистика</h2>
+      <p>Собственных рекламных cookie сайт не ставит. Партнёрские ссылки на кнопках
+         могут использовать cookie партнёрской сети, чтобы засчитать переход. Если это
+         нежелательно, отключите cookie в настройках браузера — на работу каталога
+         это не влияет. Сайт запоминает в браузере только одно: остановили ли вы
+         анимацию на первом экране.</p>
+
+      <h2>Партнёрские ссылки</h2>
+      <p>Кнопки у предложений ведут на сайты банков и МФО по партнёрским ссылкам.
+         Если посетитель оформит продукт, владелец сайта получает вознаграждение
+         от компании. Для посетителя условия продукта при этом не меняются:
+         заявка оформляется напрямую у банка или МФО, на его сайте и по его правилам.</p>
+
+      <h2>За что мы не отвечаем</h2>
+      <ul>
+        <li>Решение о выдаче карты или займа принимает банк или МФО, а не сайт.</li>
+        <li>Итоговые ставки, лимиты, сроки и комиссии определяет компания-партнёр;
+            на её сайте они всегда точнее, чем в любой витрине.</li>
+        <li>Сайт носит информационный характер и не является публичной офертой.</li>
+        <li>Сайт не выдаёт кредиты и займы, не принимает платежи, не берёт
+            предоплату и никогда не запрашивает данные банковских карт.</li>
+      </ul>
+
+      <h2>Осторожно с мошенниками</h2>
+      <p>Если от имени сайта у вас просят «страховку», «комиссию за одобрение» или
+         код из СМС — это мошенники. Мы не звоним, не пишем в мессенджеры и не
+         просим денег.</p>
+
+      <h2>Вопросы и удаление данных</h2>
+      <p>Вопрос по сайту, просьба убрать предложение или удалить технические данные о вашем
+         посещении — напишите владельцу сайта, и обращение будет рассмотрено
+         в течение 30 дней.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="ftr">
+  <div class="ftr__meta">
+    <a class="brand" href="./"><span data-brand>Вернисаж</span><span class="vh">, на главную</span></a>
+    <nav class="ftr__nav" aria-label="Подвал">
+      <ul role="list">
+        <li><a href="./#catalog">Каталог предложений</a></li>
+        <li><a href="privacy.html" aria-current="page">Политика конфиденциальности</a></li>
+      </ul>
+    </nav>
+  </div>
+  <p class="ftr__copy" style="padding-top:20px"><span>© <span id="year">2026</span> <span data-brand>Вернисаж</span></span><span>18+</span></p>
+</footer>
+<script>if(typeof SITE==="undefined"){document.write('<script src="data.js?t='+Date.now()+'"><\/script>');}</script>
+<script>
+/* название сайта — из панели, как на главной */
+(function () {
+  document.getElementById('year').textContent = new Date().getFullYear();
+  var b = typeof SITE !== 'undefined' && SITE.brand ? String(SITE.brand).trim() : '';
+  if (!b) return;
+  document.title = 'Политика обработки данных — ' + b;
+  [].forEach.call(document.querySelectorAll('[data-brand]'), function (n) { n.textContent = b; });
+  [].forEach.call(document.querySelectorAll('[data-brand-q]'), function (n) { n.textContent = '«' + b + '»'; });
+})();
+</script>
+</body>
+</html>
